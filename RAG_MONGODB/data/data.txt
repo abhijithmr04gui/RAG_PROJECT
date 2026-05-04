@@ -1,0 +1,4 @@
+Neural networks consist of layers of neurons.
+Backpropagation computes gradients.
+Gradient descent updates weights.
+Activation functions introduce non-linearity.
