@@ -1,6 +1,4 @@
-from sentence_transformers import SentenceTransformer
-
-model = SentenceTransformer("all-MiniLM-L6-v2")
+from app.model import get_embedding_model
 
 def chunk_text(text,chunk_size = 2):
     sentences = text.split(". ")
@@ -17,7 +15,7 @@ def load_and_process_data(path):
         text = f.read()
         
         chunks = chunk_text(text)
-        embeddings = model.encode(chunks)
+        embeddings = get_embedding_model().encode(chunks)
         
         return chunks,embeddings
 
